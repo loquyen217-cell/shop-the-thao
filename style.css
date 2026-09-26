@@ -1,137 +1,53 @@
+/* ==========================================
+   1. KHAI BÁO BIẾN MÀU SẮC THỂ THAO (PALETTE)
+   ========================================== */
+:root {
+  --primary-color: #ff3300;       /* Đỏ cam năng động */
+  --primary-hover: #e62e00;       /* Đỏ đậm khi hover */
+  --secondary-color: #111111;     /* Đen nhám hiện đại */
+  --accent-color: #ffb703;        /* Vàng kim điểm nhấn */
+  --bg-light: #f4f6f9;            /* Xám sáng nền */
+  --card-bg: #ffffff;             /* Trắng nền card */
+  --text-dark: #1a1a1a;           /* Chữ tối màu */
+  --text-muted: #666666;          /* Chữ phụ */
+  --border-color: #e2e8f0;        /* Viền khung */
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.12);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 body {
-  background-color: #f4f6f8;
-  color: #333;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* HEADER & NAVIGATION */
+/* ==========================================
+   2. HEADER & NAVIGATION (Đen & Đỏ Gradient)
+   ========================================== */
 header {
-  background-color: #0b6cb8;
+  background: linear-gradient(135deg, #111111 0%, #222222 100%);
   color: white;
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
 }
 
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-/* ==========================================
-   1. HIỆU ỨNG CHO LOGO (Tạo độ nổi bật)
-   ========================================== */
-.logo-img {
-  height: 45px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease; /* Tạo chuyển động mượt */
+  padding: 12px 10%;
 }
 
-/* Khi rê chuột vào Logo: Phóng to nhẹ và phát sáng */
-.logo-container:hover .logo-img {
-  transform: scale(1.1) rotate(-3deg); /* Phóng to 10% và hơi nghiêng nhẹ */
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* Hiệu ứng phát sáng */
-}
-
-/* Hiệu ứng đổi màu chữ Logo khi rê chuột */
-.logo-text {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.logo-container:hover .logo-text {
-  color: #ffeb3b; /* Chuyển sang màu vàng tươi */
-}
-
-
-/* ==========================================
-   2. BO TRÒN VÀ ĐỔI MÀU CHO CÁC NÚT BẤM (BUTTON)
-   ========================================== */
-.btn {
-  display: inline-block;
-  padding: 10px 22px;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: 2px solid transparent;
-  
-  /* BO TRÒN KHUNG BUTTON */
-  border-radius: 25px; /* Giá trị px càng lớn thì viền bo tròn càng nhiều */
-  
-  /* HIỆU ỨNG CHUYỂN MÀU MƯỢT MÀ */
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Dập bóng nhẹ tạo chiều sâu */
-}
-
-/* A. Nút Chính (Màu Xanh Dương) */
-.btn-primary {
-  background-color: #0b6cb8;
-  color: #ffffff;
-}
-
-/* Khi rê chuột vào Nút Chính: Đổi màu nền, hiện viền & dâng lên */
-.btn-primary:hover {
-  background-color: #ff9800; /* Đổi sang màu cam nổi bật */
-  color: #ffffff;
-  border-color: #e68a00;
-  transform: translateY(-3px); /* Nhích nhẹ nút lên trên */
-  box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4); /* Glow sáng màu cam */
-}
-
-/* B. Nút Mua hàng / Hành động (Màu Xanh Lá) */
-.btn-success, .btn {
-  background-color: #28a745;
-  color: #ffffff;
-}
-
-.btn-success:hover, .btn:hover {
-  background-color: #00e676; /* Đổi sang xanh lá dạ quang */
-  color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 230, 118, 0.4);
-}
-
-/* C. Nút Phụ / Làm mới (Màu Xám) */
-.btn-secondary, .btn-reset {
-  background-color: #6c757d;
-  color: #ffffff;
-}
-
-.btn-secondary:hover, .btn-reset:hover {
-  background-color: #e0e0e0; /* Đổi sang xám sáng */
-  color: #333333;
-  transform: translateY(-2px);
-}
-
-/* D. Nút Xóa (Màu Đỏ) */
-.btn-delete {
-  background-color: #e53935;
-  color: white;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 15px; /* Bo tròn nút xóa */
-  cursor: pointer;
-  font-size: 12px;
-  transition: all 0.3s ease;
-}
-
-.btn-delete:hover {
-  background-color: #d50000;
-  transform: scale(1.08); /* Phóng to nhẹ khi bấm xóa */
-}
+/* Hiệu ứng Logo Sport */
 .logo-container {
   display: flex;
   align-items: center;
@@ -141,18 +57,30 @@ header {
 }
 
 .logo-img {
-  height: 45px;
+  height: 48px;
   width: auto;
   object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-container:hover .logo-img {
+  transform: scale(1.1) rotate(-3deg);
+  filter: drop-shadow(0 0 8px rgba(255, 51, 0, 0.8));
 }
 
 .logo-text {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #ffffff, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* Thanh Menu Điều Hướng */
 nav {
-  background-color: #085593;
+  background-color: #000000;
   padding: 0 10%;
 }
 
@@ -163,212 +91,262 @@ nav {
 
 .nav-links li a {
   display: block;
-  color: white;
+  color: #dddddd;
   text-decoration: none;
-  padding: 12px 18px;
+  padding: 14px 20px;
   font-size: 14px;
-  transition: background-color 0.2s;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  background-color: #1a3f60;
-  font-weight: bold;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%); /* Cắt góc vát thể thao */
 }
 
-/* MAIN CONTAINER LAYOUT */
-.main-wrapper {
+/* ==========================================
+   3. BỐ CỤC CHÍNH (MAIN WRAPPER & TABLES)
+   ========================================== */
+.main-wrapper, .container {
   width: 85%;
   margin: 25px auto;
-  display: flex;
-  gap: 25px;
   flex: 1;
 }
 
 .container {
-  flex: 3;
-  background: white;
+  background: var(--card-bg);
   padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
 }
 
-.sidebar {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sidebar-widget {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.sidebar-widget h3 {
-  color: #0b6cb8;
-  font-size: 16px;
-  margin-bottom: 12px;
-  border-bottom: 2px solid #0b6cb8;
-  padding-bottom: 5px;
-}
-
-/* BANNER & POSTER */
-.banner-container {
+/* BẢNG BỐ CỤC TỔNG (KHUNG VIỀN THỂ THAO) */
+.layout-table {
   width: 100%;
-  border-radius: 8px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 25px;
 }
 
-.banner-img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
+.form-column {
+  vertical-align: top;
+  padding: 25px;
+  border-right: 2px solid #eeeeee;
 }
 
-.poster-img {
+.poster-column {
+  width: 320px;
+  vertical-align: top;
+  padding: 25px;
+  background-color: #fafafa;
+}
+
+.form-title {
+  color: var(--secondary-color);
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-left: 5px solid var(--primary-color);
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   4. BẢNG FORM ĐĂNG KÝ & BẢNG GIỎ HÀNG
+   ========================================== */
+.form-table, .cart-table {
   width: 100%;
-  height: auto;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+/* Kẻ viền và định dạng ô */
+.form-table td, .cart-table th, .cart-table td {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+/* Header Bảng Giỏ Hàng */
+.cart-table th {
+  background-color: var(--secondary-color);
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border-color: var(--secondary-color);
+}
+
+.label-cell {
+  width: 140px;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  color: var(--secondary-color);
+}
+
+.input-cell input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
 }
 
-.poster-img:hover {
-  transform: scale(1.02);
+.input-cell input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(255, 51, 0, 0.2);
+  outline: none;
 }
 
-/* GRID SẢN PHẨM */
+/* ==========================================
+   5. HIỆU ỨNG NÚT BẤM (BUTTONS) & THAO TÁC
+   ========================================== */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px; /* Bo tròn capsule */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Nút Chính (Đỏ Cam) */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #ff5500);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #e62e00, #cc2900);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 7px 14px rgba(255, 51, 0, 0.35);
+}
+
+/* Nút Phụ (Đen/Xám) */
+.btn-secondary, .btn-reset {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover, .btn-reset:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+/* Nút Xóa */
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #a71d2a;
+  transform: scale(1.08);
+}
+
+/* ==========================================
+   6. HIỆU ỨNG THẺ SẢN PHẨM & POSTER
+   ========================================== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   margin-top: 15px;
 }
 
 .product-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
   padding: 15px;
   text-align: center;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
 }
 
 .product-card img {
   width: 100%;
-  height: 160px;
+  height: 170px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .product-card h3 {
-  font-size: 14px;
-  margin: 10px 0;
-}
-/* BẢNG BỐ CỤC TỔNG (KẺ KHUNG NGOÀI) */
-.layout-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 2px solid #0b6cb8; /* Khung viền ngoài cùng màu xanh */
+  font-size: 15px;
+  margin: 12px 0 6px;
 }
 
-/* KHUNG BẢNG NHẬP LIỆU BÊN TRÁI */
-.form-column {
-  vertical-align: top;
-  padding: 20px;
-  border-right: 2px solid #0b6cb8; /* Đường ngăn giữa Form và Poster */
+.price, .price-highlight {
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 16px;
 }
 
-.poster-column {
-  width: 300px;
-  vertical-align: top;
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-/* BẢNG FORM NHẬP THÔNG TIN (KẺ KHUNG TỪNG Ô) */
-.form-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-/* Thêm viền khung cho từng ô trong bảng form */
-.form-table td {
-  padding: 12px;
-  border: 1px solid #ccc; /* Đường viền xám cho từng ô */
-}
-
-/* Ô tiêu đề cột trái */
-.label-cell {
-  width: 140px;
-  font-weight: bold;
-  font-size: 14px;
-  background-color: #f0f4f8; /* Nền xám nhạt cho cột tiêu đề */
-  vertical-align: middle;
-}
-
-.required {
-  color: #e53935;
-}
-
-.input-cell input {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.input-cell input:focus {
-  border-color: #0b6cb8;
-  outline: none;
-}
-.product-card .price {
-  color: #e53935;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #28a745;
-  color: white;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.btn:hover { background-color: #218838; }
-.btn-primary { background-color: #0b6cb8; }
-.btn-primary:hover { background-color: #085593; }
-
-/* FOOTER */
-footer {
-  background-color: #1a3f60;
-  color: white;
+/* Khung Poster Quảng Cáo */
+.poster-box {
   text-align: center;
+  border: 2px dashed var(--primary-color);
   padding: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.poster-box h3 {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.poster-img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.poster-img:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================================
+   7. FOOTER THỂ THAO
+   ========================================== */
+footer {
+  background-color: var(--secondary-color);
+  color: #aaaaaa;
+  text-align: center;
+  padding: 20px;
   margin-top: auto;
   font-size: 13px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .main-wrapper { flex-direction: column; width: 95%; }
-  .top-bar { flex-direction: column; gap: 10px; }
-  .nav-links { flex-direction: column; }
+  border-top: 4px solid var(--primary-color);
 }
