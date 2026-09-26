@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Liên Hệ - SportShop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="top-bar">
+      <a href="index.html" class="logo-container">
+        <!-- Chèn Logo tại đây -->
+        <img src="images/logo.png" alt="Logo SportShop" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=LOGO'">
+        <span class="logo-text">SPORT SHOP</span>
+      </a>
+      <div>
+        <a href="cart.html" style="color:white; text-decoration:none; font-weight:bold;">🛒 Giỏ hàng (0)</a>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Trang Chủ</a></li>
+        <li><a href="products.html">Sản Phẩm</a></li>
+        <li><a href="about.html">Giới Thiệu & Tin Tức</a></li>
+        <li><a href="contact.html">Liên Hệ</a></li>
+        <li><a href="register.html">Đăng Ký</a></li>
+        <li><a href="cart.html">Giỏ Hàng</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Thông Tin Liên Hệ</h2>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 250px;">
+        <p><strong>Địa chỉ:</strong> Số 123 Đường Z115, TP. Thái Nguyên</p>
+        <p><strong>Điện thoại:</strong> 0967 898 380</p>
+        <p><strong>Email:</strong> contact@sportshop.com</p>
+        <p><strong>Giờ mở cửa:</strong> 08:00 - 21:00 (Tất cả các ngày)</p>
+      </div>
+      <div style="flex: 1; min-width: 250px;">
+        <form onsubmit="alert('Gửi tin nhắn thành công!'); return false;">
+          <div class="form-group">
+            <label>Lời nhắn của bạn</label>
+            <textarea rows="4" placeholder="Nhập thắc mắc hoặc góp ý..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Gửi Liên Hệ</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 SportShop. Tất cả quyền được bảo lưu.</p>
+  </footer>
+
+</body>
+</html>

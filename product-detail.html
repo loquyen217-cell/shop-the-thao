@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi Tiết Sản Phẩm - SportShop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="top-bar">
+      <a href="index.html" class="logo-container">
+        <!-- Chèn Logo tại đây -->
+        <img src="images/logo.png" alt="Logo SportShop" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=LOGO'">
+        <span class="logo-text">SPORT SHOP</span>
+      </a>
+      <div>
+        <a href="cart.html" style="color:white; text-decoration:none; font-weight:bold;">🛒 Giỏ hàng (0)</a>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Trang Chủ</a></li>
+        <li><a href="products.html">Sản Phẩm</a></li>
+        <li><a href="about.html">Giới Thiệu & Tin Tức</a></li>
+        <li><a href="contact.html">Liên Hệ</a></li>
+        <li><a href="register.html">Đăng Ký</a></li>
+        <li><a href="cart.html">Giỏ Hàng</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 280px;">
+        <img src="images/clothe.png" alt="Áo Đấu" style="width: 100%; border-radius: 6px;">
+      </div>
+      <div style="flex: 1.5; min-width: 280px;">
+        <h1>Nike DriFit 2026 South Korea Stadium Home Jersey IB5328-679</h1>
+        <p style="font-size: 20px; color: #e53935; font-weight: bold; margin: 10px 0;">250.000 đ</p>
+        <p><strong>Chất liệu:</strong> Vải Dri-FIT thoáng khí, thấm hút mồ hôi cực tốt.</p>
+        <p><strong>Màu sắc:</strong> Xanh dương / Đen / Trắng</p>
+        <p><strong>Size:</strong> S, M, L, XL</p>
+        <br>
+        <div class="form-group" style="width: 100px;">
+          <label>Số lượng:</label>
+          <input type="number" value="1" min="1">
+        </div>
+        <button class="btn" onclick="alert('Đã thêm sản phẩm vào giỏ hàng!')">Thêm Vào Giỏ Hàng</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 SportShop. Tất cả quyền được bảo lưu.</p>
+  </footer>
+
+</body>
+</html>
