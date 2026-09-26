@@ -26,7 +26,112 @@ header {
   padding: 10px 10%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* ==========================================
+   1. HIỆU ỨNG CHO LOGO (Tạo độ nổi bật)
+   ========================================== */
+.logo-img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Tạo chuyển động mượt */
+}
 
+/* Khi rê chuột vào Logo: Phóng to nhẹ và phát sáng */
+.logo-container:hover .logo-img {
+  transform: scale(1.1) rotate(-3deg); /* Phóng to 10% và hơi nghiêng nhẹ */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); /* Hiệu ứng phát sáng */
+}
+
+/* Hiệu ứng đổi màu chữ Logo khi rê chuột */
+.logo-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.logo-container:hover .logo-text {
+  color: #ffeb3b; /* Chuyển sang màu vàng tươi */
+}
+
+
+/* ==========================================
+   2. BO TRÒN VÀ ĐỔI MÀU CHO CÁC NÚT BẤM (BUTTON)
+   ========================================== */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid transparent;
+  
+  /* BO TRÒN KHUNG BUTTON */
+  border-radius: 25px; /* Giá trị px càng lớn thì viền bo tròn càng nhiều */
+  
+  /* HIỆU ỨNG CHUYỂN MÀU MƯỢT MÀ */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Dập bóng nhẹ tạo chiều sâu */
+}
+
+/* A. Nút Chính (Màu Xanh Dương) */
+.btn-primary {
+  background-color: #0b6cb8;
+  color: #ffffff;
+}
+
+/* Khi rê chuột vào Nút Chính: Đổi màu nền, hiện viền & dâng lên */
+.btn-primary:hover {
+  background-color: #ff9800; /* Đổi sang màu cam nổi bật */
+  color: #ffffff;
+  border-color: #e68a00;
+  transform: translateY(-3px); /* Nhích nhẹ nút lên trên */
+  box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4); /* Glow sáng màu cam */
+}
+
+/* B. Nút Mua hàng / Hành động (Màu Xanh Lá) */
+.btn-success, .btn {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.btn-success:hover, .btn:hover {
+  background-color: #00e676; /* Đổi sang xanh lá dạ quang */
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 230, 118, 0.4);
+}
+
+/* C. Nút Phụ / Làm mới (Màu Xám) */
+.btn-secondary, .btn-reset {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.btn-secondary:hover, .btn-reset:hover {
+  background-color: #e0e0e0; /* Đổi sang xám sáng */
+  color: #333333;
+  transform: translateY(-2px);
+}
+
+/* D. Nút Xóa (Màu Đỏ) */
+.btn-delete {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 15px; /* Bo tròn nút xóa */
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #d50000;
+  transform: scale(1.08); /* Phóng to nhẹ khi bấm xóa */
+}
 .logo-container {
   display: flex;
   align-items: center;
