@@ -34,7 +34,7 @@ body {
    2. HEADER & NAVIGATION (Đen & Đỏ Gradient)
    ========================================== */
 header {
-  background: linear-gradient(135deg, #111111 0%, #222222 100%);
+  background: linear-gradient(135deg, #111111 0000%, #222222 10%);
   color: white;
   border-bottom: 3px solid var(--primary-color);
   box-shadow: var(--shadow-sm);
@@ -53,7 +53,8 @@ header {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #fff;
+  color: red;
+
 }
 
 .logo-img {
